@@ -65,6 +65,7 @@ a{
     background-position-y: 80%;
     background-repeat: no-repeat;
     background-size: cover;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 #about{
     height: 450px;
@@ -83,10 +84,11 @@ a{
 #home h3{
     position: absolute;
     margin-top: 15.6%;
-    margin-left: 36.5%;
+    margin-left: 35.6%;
     font-size: 65px;
     color: indianred;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    font-family:cursive;
 }
 /* #home h3::after{
     content:'';
