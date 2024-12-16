@@ -20,7 +20,8 @@
     </div>
     <div id="home">
        <h1>Hello</h1>
-       <h3>I'am Developer</h3>
+       <h3><span id="developer-text" class="typing-effect"></span></h3>
+       <h3><span id="name-text" class="typing-effect hidden typing-delay"></span></h3>
        <div class="social">
        <a href="https://github.com/Akashchavhan"><img src="./images/github.png" alt="github"></a>
        <a href="https://www.linkedin.com/in/akashchavan12/"><img src="./images/linkedin.png" alt="linkedin"></a>
@@ -44,7 +45,7 @@
                 experience in building dynamic applications using React. Skilled in
                 backend development with Java, along with experience in database
                 management.</p>
-            <button onclick="location.href='https://drive.google.com/file/d/18F--GwtK-ZNhkkneuzIAo-ov6lQdIm78/view?usp=drive_link'">Download CV</button>
+            <button onclick="location.href='AkashChavanResume.pdf'">Download CV</button>
         </div>
     </div>
     <div id="skills">
@@ -173,7 +174,49 @@
             <p>Project by Akash Chavan</p>
         </footer>
     </div>
+    <script>
+        // JavaScript to handle the text change and animation
+        window.onload = function() {
+            const developerText = document.getElementById('developer-text');
+            const nameText = document.getElementById('name-text');
 
+            // Set the initial text for developer
+            developerText.textContent = "I'am Developer";
+
+            // Function to clear text with backspacing and then type the new text
+            function changeText() {
+                // After typing "I'am Developer", add the reverse typing animation to erase the text
+                setTimeout(() => {
+                    developerText.classList.add('reverse-typing'); // Apply reverse typing (backspace effect)
+                }, 3000); // Wait for typing animation to finish before starting to erase
+
+                // After backspacing (clearing the text), start typing "Akash Chavan"
+                setTimeout(() => {
+                    // Clear the content and hide "I'am Developer"
+                    developerText.classList.remove('reverse-typing'); // Remove reverse typing animation
+                    developerText.classList.add('hidden'); // Hide the developer text
+
+                    // Show "Akash Chavan" and start typing it
+                    nameText.classList.remove('hidden'); // Show "Akash Chavan"
+                    nameText.textContent = ''; // Start with empty text
+
+                    // Manually type "Akash Chavan" letter by letter
+                    let text = 'Akash Chavan';
+                    let i = 0;
+                    let interval = setInterval(() => {
+                        nameText.textContent += text[i];
+                        i++;
+                        if (i === text.length) {
+                            clearInterval(interval); // Stop typing when the full text is typed
+                        }
+                    }, 200); // Delay between each letter typing
+                }, 5000); // After clearing "I'am Developer", start typing "Akash Chavan"
+            }
+
+            // Trigger the text change and typing effect after "I'am Developer" is fully typed
+            setTimeout(changeText, 3000); // Delay the transition for "Akash Chavan" after the first text is typed
+        };
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 
